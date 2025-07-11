@@ -52,9 +52,7 @@ FirstGradio/
 ├── requirements.txt
 ├── app.py
 ├── examples/
-│   ├── basic_demo.py
-│   ├── image_classifier.py
-│   └── text_generator.py
+│   └── basic_demo.py
 └── models/
     └── (your ML models here)
 ```
