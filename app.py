@@ -24,9 +24,22 @@ def process_image(image):
 
 def generate_random_data():
     """Generate random data for visualization"""
+    import matplotlib.pyplot as plt
+    
     x = np.linspace(0, 10, 100)
     y = np.sin(x) + np.random.normal(0, 0.1, 100)
-    return x, y
+    
+    # Create a matplotlib figure
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.plot(x, y, 'b-', linewidth=2, label='Sine wave with noise')
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_title('Random Sine Wave with Noise')
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+    plt.tight_layout()
+    
+    return fig
 
 # Create the Gradio interface
 with gr.Blocks(title="FirstGradio - Learning Examples") as demo:
