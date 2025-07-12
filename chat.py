@@ -20,15 +20,6 @@ def chat(message, history):
 
 
 if __name__ == "__main__":
-    force_dark_mode = """,
-    <script>
-        const url = new URL(window.location);,
-        if (url.searchParams.get('__theme') !== 'dark') {,
-            url.searchParams.set('__theme', 'dark');,
-            window.location.href = url.href;,
-        },
-    </script>
-    """
     js_code = """
 <script>
     console.log("Custom JavaScript loaded with ChatInterface!");
@@ -39,7 +30,7 @@ if __name__ == "__main__":
     }
 </script>
 """
-    with gr.Blocks(head=js_code) as demo:
+    with gr.Blocks(title="AC Chatbot", head=js_code) as demo:
         gr.ChatInterface(chat,
         type="messages",
         chatbot=gr.Chatbot(height=300, type="messages"),
