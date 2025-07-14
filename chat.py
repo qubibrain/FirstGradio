@@ -1,8 +1,8 @@
 import gradio as gr
 
-def dummy_chat(user_input):
+def chat(message, history):
     # Convert input to lowercase for case-insensitive matching
-    user_input_lower = user_input.lower()
+    user_input_lower = message.lower()
     
     if "hello" in user_input_lower or "hi" in user_input_lower:
         return "Hi there! What's on your mind?"
@@ -15,29 +15,5 @@ def dummy_chat(user_input):
     else:
         return "I'm not sure how to respond to that. Can you rephrase?"
 
-def chat(message, history):
-    return dummy_chat(message)
-
-
 if __name__ == "__main__":
-    js_code = """
-<script>
-    console.log("Custom JavaScript loaded with ChatInterface!");
-    const url = new URL(window.location);
-    if (url.searchParams.get('__theme') !== 'dark') {
-        url.searchParams.set('__theme', 'dark');
-        window.location.href = url.href;
-    }
-</script>
-"""
-    with gr.Blocks(title="AC Chatbot", head=js_code) as demo:
-        gr.ChatInterface(chat,
-        type="messages",
-        chatbot=gr.Chatbot(height=300, type="messages"),
-        theme="ocean",
-        textbox=gr.Textbox(placeholder="Chat with me, I can only respond to simple questions.", container=False, scale=7),
-        description="Ask Dummy Chatbot any question",
-        examples=["Hello", "How are you?", "What is your name?"],
-        title="Dummy Chatbot")
-
-    demo.launch()
+    gr.ChatInterface(chat, type="messages").launch()
