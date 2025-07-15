@@ -26,7 +26,8 @@ def chat(message, history):
             temperature=0.7  # Add some creativity to responses
         )
         
-        return response.choices[0].message.content.strip()
+        content = response.choices[0].message.content
+        return content.strip() if content else "I'm sorry, I couldn't generate a response."
     
     except Exception as e:
         # Fallback response if OpenAI API fails
