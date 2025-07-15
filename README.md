@@ -32,7 +32,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install required dependencies:
 ```bash
-pip install gradio
+pip install -r requirements.txt
 ```
 
 ### Running the Application
