@@ -35,6 +35,29 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Setting Up OpenAI API Token
+
+To use OpenAI features in this project, you need to set up your OpenAI API token:
+
+1. Get your OpenAI API key:
+   - Visit [OpenAI Platform](https://platform.openai.com/api-keys)
+   - Create a new API key or use an existing one
+
+2. Create a `.env` file in the project root:
+```bash
+touch .env
+```
+
+3. Add your OpenAI API key to the `.env` file:
+```bash
+echo "OPENAI_API_KEY=your_api_key_here" >> .env
+```
+
+**Important Security Notes:**
+- Never commit your `.env` file to version control
+- Replace `your_api_key_here` with your actual OpenAI API key
+- Keep your API key secure and don't share it publicly
+
 ### Running the Application
 
 To run a Gradio app:

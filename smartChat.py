@@ -37,6 +37,7 @@ def chat(message, history):
 if __name__ == "__main__":
     gr.ChatInterface(
             chat,
+            chatbot=gr.Chatbot(height=400, type="messages"),
             type="messages",
             theme="ocean",
             textbox=gr.Textbox(
@@ -52,4 +53,4 @@ if __name__ == "__main__":
                 "What are the benefits of machine learning?"
             ],
             title="🎉 Smart AI Chatbot!"
-        ).launch()
+        ).launch(share=True)
