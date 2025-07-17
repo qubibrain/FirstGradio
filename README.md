@@ -2,6 +2,8 @@
 
 This project is created to learn and experiment with Gradio, a Python library for creating customizable web interfaces for machine learning models.
 
+If you want a more detailed explanation of the code here, please visit my blog at [Beyond the Prompt: Designing AI Experiences with Gradio](https://www.qubibrain.ai/blog/first_gradio)
+
 ## 🎯 Project Goals
 
 - Learn Gradio fundamentals and best practices
